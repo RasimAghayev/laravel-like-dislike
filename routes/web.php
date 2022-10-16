@@ -24,3 +24,7 @@ Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name
 Auth::routes();
 
 Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
+
+Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
+Route::get('posts', [App\Http\Controllers\HomeController::class, 'posts'])->name('posts');
+Route::post('like', [App\Http\Controllers\HomeController::class, 'LikePost'])->name('like');

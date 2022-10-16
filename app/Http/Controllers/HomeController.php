@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\Post;
 use Illuminate\Http\Request;
 
 class HomeController extends Controller
@@ -24,5 +25,18 @@ class HomeController extends Controller
     public function index()
     {
         return view('home');
+    }
+    public function posts()
+    {
+        $posts = Post::get();
+        return view('posts', compact('posts'));
+    }
+
+    public function LikePost(Request $request){
+
+        $post = Post::find($request->id);
+        $response = auth()->user()->toggleLike($post);
+
+        return response()->json(['success'=>$response]);
     }
 }

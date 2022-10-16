@@ -186,8 +186,7 @@ return [
          * Package Service Providers...
          */
 
-        Overtrue\LaravelFollow\FollowServiceProvider::class,
-
+        Overtrue\LaravelLike\LikeServiceProvider::class,
         /*
          * Application Service Providers...
          */
